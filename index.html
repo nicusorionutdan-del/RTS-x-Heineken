@@ -4,7 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Heineken ✦ Run to Sip Event Proposal</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
 
 <style>
@@ -18,7 +17,6 @@ color:white;
 }
 
 /* HERO */
-
 .hero{
 background:linear-gradient(120deg,#0b6e3d,#1ed760);
 padding:90px 20px;
@@ -56,16 +54,13 @@ gap:30px;
 margin-bottom:20px;
 position:relative;
 z-index:1;
+flex-wrap:wrap;
 }
 
-.brand-logos img{
-height:100px;
-object-fit:contain;
-}
+.brand-logos img{object-fit:contain;}
 
-.brand-logos img:nth-child(2){
-height:200px;
-}
+.brand-logos img:nth-child(1){height:100px;}
+.brand-logos img:nth-child(2){height:200px;}
 
 .hero h1{
 font-size:48px;
@@ -124,11 +119,11 @@ margin-bottom:30px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
-/* CARDS */
+/* CARD */
 
 .card{
 background:rgba(255,255,255,0.05);
@@ -146,15 +141,9 @@ border-color:#1ed760;
 box-shadow:0 0 25px rgba(30,215,96,.4);
 }
 
-.card h3{
-margin-top:0;
-font-size:18px;
-}
+.card h3{margin-top:0;font-size:18px;}
 
-.price{
-color:#1ed760;
-margin-top:8px;
-}
+.price{color:#1ed760;margin-top:8px;}
 
 .checkbox{
 position:absolute;
@@ -163,9 +152,7 @@ top:16px;
 transform:scale(1.3);
 }
 
-.mandatory{
-border:2px solid #e30613;
-}
+.mandatory{border:2px solid #e30613;}
 
 .mandatory-label{
 position:absolute;
@@ -199,10 +186,7 @@ border-radius:10px;
 border:1px solid #2a2a2a;
 }
 
-.total-title{
-font-size:14px;
-opacity:.7;
-}
+.total-title{font-size:14px;opacity:.7;}
 
 .total-value{
 font-size:28px;
@@ -210,9 +194,7 @@ margin-top:5px;
 color:#1ed760;
 }
 
-.grand{
-border:2px solid #e30613;
-}
+.grand{border:2px solid #e30613;}
 
 .client-summary{
 margin-top:30px;
@@ -221,8 +203,6 @@ background:#0f0f0f;
 border-radius:10px;
 border:1px solid #2a2a2a;
 }
-
-/* BUTTONS */
 
 .actions{
 margin-top:30px;
@@ -241,40 +221,33 @@ cursor:pointer;
 font-weight:700;
 }
 
-button:hover{
-transform:translateY(-2px);
-}
+button:hover{transform:translateY(-2px);}
 
-.footer{
-text-align:center;
-padding:40px;
-opacity:.6;
-}
+.footer{text-align:center;padding:40px;opacity:.6;}
 
-/* ---------------- MOBILE ---------------- */
+/* MOBILE */
 
 @media (max-width:768px){
 
 .hero{
-padding:60px 20px;
+padding:50px 16px;
 }
 
 .hero h1{
-font-size:32px;
+font-size:28px;
 line-height:1.2;
 }
 
 .brand-logos{
-flex-direction:column;
-gap:10px;
+gap:12px;
 }
 
 .brand-logos img:nth-child(1){
-height:70px;
+height:60px;
 }
 
 .brand-logos img:nth-child(2){
-height:120px;
+height:110px;
 }
 
 .about-section{
@@ -284,20 +257,36 @@ margin:40px auto;
 }
 
 .about-section p{
-font-size:15px;
+font-size:14px;
+}
+
+.container{
+padding:40px 16px;
+}
+
+.section-title{
+font-size:22px;
 }
 
 .grid{
 grid-template-columns:1fr;
-gap:16px;
 }
 
 .card{
-padding:20px;
+padding:18px;
+}
+
+.card h3{
+font-size:16px;
 }
 
 .summary{
-padding:25px;
+padding:24px 16px;
+margin-top:40px;
+}
+
+.totals{
+grid-template-columns:1fr;
 }
 
 .total-value{
@@ -312,18 +301,6 @@ button{
 width:100%;
 padding:14px;
 font-size:15px;
-}
-
-.container{
-padding:40px 16px;
-}
-
-.section-title{
-font-size:24px;
-}
-
-.footer{
-padding:30px 20px;
 }
 
 }
@@ -348,9 +325,7 @@ padding:30px 20px;
 display:none;
 }
 
-.grid{
-display:block;
-}
+.grid{display:block;}
 
 .card{
 margin-bottom:12px;
@@ -361,13 +336,9 @@ color:black;
 box-shadow:none;
 }
 
-.checkbox{
-display:none;
-}
+.checkbox{display:none;}
 
-.price{
-color:black;
-}
+.price{color:black;}
 
 .summary{
 margin-top:20px;
@@ -387,13 +358,9 @@ background:white;
 border:1px solid #ccc;
 }
 
-.actions{
-display:none;
-}
+.actions{display:none;}
 
-.footer{
-display:none;
-}
+.footer{display:none;}
 
 }
 
@@ -407,8 +374,8 @@ display:none;
 <h1>Heineken ✦ Run to Sip</h1>
 
 <div class="brand-logos">
-<img src="./heineken.png">
-<img src="./run-to-sip.svg.svg">
+<img src="./heineken.png" alt="Heineken logo">
+<img src="./run-to-sip.svg.svg" alt="Run to Sip logo">
 </div>
 
 <p>Brand Activation Proposal</p>
@@ -417,7 +384,7 @@ display:none;
 
 <section class="about-section">
 
-<img src="./IMG_0210.JPG">
+<img src="./IMG_0210.JPG" alt="Run to Sip Community">
 
 <p>
 We are Run to Sip - the most vibrant running community in Bucharest, bringing together some of the most amazing people in the city.
@@ -429,9 +396,187 @@ Week after week, more than 100 runners show up at our events, and that number co
 
 </section>
 
-<!-- rest of your HTML stays IDENTICAL -->
+<div class="container">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<h2 class="section-title">Core Experience</h2>
+
+<div class="grid">
+
+<div class="card mandatory">
+<input class="checkbox" type="checkbox" checked disabled data-price="700" data-type="core">
+<h3>Run to Sip organizing fee</h3>
+<p>Full organization and coordination of the community.</p>
+<div class="price">700 EUR</div>
+<div class="mandatory-label">MANDATORY</div>
+</div>
+
+<div class="card">
+<input class="checkbox" type="checkbox" checked data-price="500" data-type="core">
+<h3>Event photo + edit (night time)</h3>
+<p>Professional event photography and edits.</p>
+<div class="price">500 EUR</div>
+</div>
+
+<div class="card mandatory">
+<input class="checkbox" type="checkbox" checked disabled data-price="300" data-type="core">
+<h3>Instagram branded event announcement</h3>
+<p>Community event announcement post.</p>
+<div class="price">300 EUR</div>
+<div class="mandatory-label">MANDATORY</div>
+</div>
+
+<div class="card">
+<input class="checkbox" type="checkbox" checked data-price="500" data-type="core">
+<h3>Question of the day reel</h3>
+<p>Short interview-style reel where runners answer a fun question of the day.</p>
+<div class="price">500 EUR</div>
+</div>
+
+</div>
+
+<h2 class="section-title" style="margin-top:70px">Extras</h2>
+
+<div class="grid">
+
+<div class="card">
+<input class="checkbox" type="checkbox" data-price="200" data-type="extra">
+<h3>Giveaway</h3>
+<p>Community engagement giveaway.</p>
+<div class="price">200 EUR</div>
+</div>
+
+<div class="card">
+<input class="checkbox" type="checkbox" data-price="500" data-type="extra">
+<h3>Interactive giveaway game</h3>
+<p>Winner prediction game integrated with Telegram bot.</p>
+<div class="price">500 EUR</div>
+</div>
+
+<div class="card">
+<input class="checkbox" type="checkbox" data-price="100" data-type="extra">
+<h3>Branded running flags</h3>
+<p>Heineken branded route flags.</p>
+<div class="price">100 EUR</div>
+</div>
+
+<div class="card">
+<input class="checkbox" type="checkbox" data-price="250" data-type="extra">
+<h3>DJ Set</h3>
+<p>Post-run DJ party.</p>
+<div class="price">250 EUR</div>
+</div>
+
+<div class="card">
+<input class="checkbox" type="checkbox" data-price="200" data-type="extra">
+<h3>Community Heineken T-Shirts</h3>
+<p>Participants wearing Heineken branded shirts.</p>
+<div class="price">200 EUR</div>
+</div>
+
+<div class="card">
+<input class="checkbox" type="checkbox" data-price="1000" data-type="extra">
+<h3>Monthly Instagram campaign</h3>
+<p>Weekly posts under the Fans Have More Friends campaign, each week revealing a subtle hint about the upcoming event to build anticipation and generate community hype leading up to the run.</p>
+<div class="price">1000 EUR</div>
+</div>
+
+<div class="card">
+<input class="checkbox" type="checkbox" data-price="350" data-type="extra">
+<h3>Dedicated videographer</h3>
+<p>In case you would like an after movie reel instead of question of the day, professional video coverage is required.</p>
+<div class="price">350 EUR</div>
+</div>
+
+</div>
+
+<div class="summary">
+
+<h2>Estimated Budget</h2>
+
+<div class="totals">
+
+<div class="total-box">
+<div class="total-title">Core Total</div>
+<div class="total-value" id="coreTotal">0 EUR</div>
+</div>
+
+<div class="total-box">
+<div class="total-title">Extras Total</div>
+<div class="total-value" id="extrasTotal">0 EUR</div>
+</div>
+
+<div class="total-box grand">
+<div class="total-title">Grand Total</div>
+<div class="total-value" id="grandTotal">0 EUR</div>
+</div>
+
+</div>
+
+<div class="client-summary">
+<h3>Client Summary</h3>
+<div id="selectedItems">No extras selected.</div>
+</div>
+
+<div class="actions">
+<button onclick="downloadPDF()">Download PDF</button>
+<button onclick="sendEmail()">Send selection to email</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">LOUDER LOVE. LOUDER COMMUNITY.</div>
+
+<script>
+
+function calculate(){
+let core=0
+let extras=0
+let items=[]
+
+document.querySelectorAll("input[type='checkbox']").forEach(box=>{
+
+if(box.checked){
+
+const price=Number(box.dataset.price)
+const name=box.parentElement.querySelector("h3").innerText
+
+items.push(name+" – "+price+" EUR")
+
+if(box.dataset.type==="core"){
+core+=price
+}else{
+extras+=price
+}
+
+}
+
+})
+
+let grand=core+extras
+
+document.getElementById("coreTotal").innerText=core+" EUR"
+document.getElementById("extrasTotal").innerText=extras+" EUR"
+document.getElementById("grandTotal").innerText=grand+" EUR"
+
+const list=document.getElementById("selectedItems")
+
+if(items.length===0){
+list.innerText="No options selected."
+}else{
+list.innerHTML=items.join("<br>")
+}
+
+}
+
+document.querySelectorAll("input[type='checkbox']").forEach(el=>{
+el.addEventListener("change",calculate)
+})
+
+calculate()
+
+</script>
 
 </body>
 </html>
