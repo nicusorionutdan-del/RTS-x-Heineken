@@ -570,6 +570,89 @@ list.innerHTML=items.join("<br>")
 
 }
 
+function downloadPDF(){
+
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF({ unit:"mm", format:"a4" });
+
+const coreTotal = document.getElementById("coreTotal").innerText;
+const extrasTotal = document.getElementById("extrasTotal").innerText;
+const grandTotal = document.getElementById("grandTotal").innerText;
+const selected = document.getElementById("selectedItems").innerText.split("\n");
+
+let y = 20;
+
+doc.setFont("helvetica","bold");
+doc.setFontSize(18);
+doc.text("Heineken x Run to Sip",20,y);
+
+y += 8;
+doc.setFontSize(11);
+doc.setFont("helvetica","normal");
+doc.text("Brand Activation Proposal",20,y);
+
+y += 15;
+doc.setFont("helvetica","bold");
+doc.setFontSize(14);
+doc.text("Estimated Budget",20,y);
+
+y += 8;
+doc.setFontSize(11);
+doc.setFont("helvetica","normal");
+doc.text(`Core Total: ${coreTotal}`,20,y);
+y += 6;
+doc.text(`Extras Total: ${extrasTotal}`,20,y);
+y += 6;
+doc.text(`Grand Total: ${grandTotal}`,20,y);
+
+y += 14;
+doc.setFont("helvetica","bold");
+doc.setFontSize(14);
+doc.text("Client Summary",20,y);
+
+y += 8;
+doc.setFontSize(11);
+doc.setFont("helvetica","normal");
+
+selected.forEach(item=>{
+ if(item.trim().length>0){
+   doc.text("- " + item,20,y);
+   y += 6;
+ }
+});
+
+doc.save("Heineken-Run-to-Sip-Proposal.pdf");
+
+}
+
+function sendEmail(){
+
+let selected=[]
+let total=document.getElementById("grandTotal").innerText
+
+document.querySelectorAll("input[type='checkbox']").forEach(box=>{
+
+if(box.checked){
+
+const name=box.parentElement.querySelector("h3").innerText
+const price=box.dataset.price
+
+selected.push(name+" - "+price+" EUR")
+
+}
+
+})
+
+let body="Hello Run to Sip team,%0D%0A%0D%0AHere is our selected proposal:%0D%0A%0D%0A"
+
+selected.forEach(i=>body+=i+"%0D%0A")
+
+body+="%0D%0ATotal: "+total
+
+window.location.href="mailto:contact@runtosip.com?subject=Heineken Run to Sip Proposal&body="+body
+
+}
+
 document.querySelectorAll("input[type='checkbox']").forEach(el=>{
 el.addEventListener("change",calculate)
 })
@@ -577,6 +660,8 @@ el.addEventListener("change",calculate)
 calculate()
 
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </body>
 </html>
